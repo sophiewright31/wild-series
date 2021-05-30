@@ -18,7 +18,7 @@ class Program
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $title;
 
@@ -28,7 +28,7 @@ class Program
     private $summary;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $poster;
 
@@ -43,12 +43,12 @@ class Program
         return $this->id;
     }
 
-    public function getTitle(): ?int
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    public function setTitle(int $title): self
+    public function setTitle(string $title): self
     {
         $this->title = $title;
 

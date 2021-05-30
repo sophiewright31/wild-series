@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210529164447 extends AbstractMigration
+final class Version20210530151703 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,18 +20,12 @@ final class Version20210529164447 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE program ADD category_id INT NOT NULL');
-        $this->addSql('ALTER TABLE program ADD CONSTRAINT FK_92ED778412469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
-        $this->addSql('CREATE INDEX IDX_92ED778412469DE2 ON program (category_id)');
-
+        $this->addSql('ALTER TABLE program CHANGE poster poster VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE program DROP FOREIGN KEY FK_92ED778412469DE2');
-        $this->addSql('DROP INDEX IDX_92ED778412469DE2 ON program');
-        $this->addSql('ALTER TABLE program DROP category_id');
-
+        $this->addSql('ALTER TABLE program CHANGE poster poster VARCHAR(100) CHARACTER SET utf8mb4 DEFAULT NULL COLLATE `utf8mb4_unicode_ci`');
     }
 }
