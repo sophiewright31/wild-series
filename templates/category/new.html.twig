@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block title %} Formulaire d'ajout d'une Catégorie {% endblock %}
+{% block body %}
+    <h1 class="mb-3"> Formulaire d'ajout d'une Catégorie : </h1>
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+    <input class="btn btn-dark mt-3" type='submit' value='Ajouter'>
+    {{ form_end(form) }}
+
+    <a class="mt-3" href="{{ path('category_index') }}">
+        Retour à la liste des catégories
+    </a>
+{% endblock %}
