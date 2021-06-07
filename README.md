@@ -26,3 +26,7 @@
 ## Demonstration Quest 16
 
 [video] https://streamable.com/9denj6
+
+## Demonstration Quest 17
+
+[video] https://streamable.com/nh3c4i

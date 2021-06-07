@@ -6,7 +6,7 @@
      <h1> Toutes les acteurs : </h1>
      <ul>
          {% for actor in actors %}
-             <li><a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.firstname }} {{ actor.lastname }}</a></li>
+             <li><a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a></li>
          {% else %}
              Aucune acteur trouvé.
          {% endfor %}
