@@ -17,6 +17,14 @@
                   <p> Pas de saison trouvée </p>
               {% endfor %}
           </ul>
+          <strong class="text-white">Acteurs :</strong>
+          <ul>
+              {% for actor in program.actors %}
+                  <li class="text-white"><a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.firstname }} {{ actor.lastname }}</a></li>
+              {% else %}
+                  <li class="text-white">Aucun acteur pour cette série</li>
+              {% endfor %}
+          </ul>
       </div>
     </div>
 
